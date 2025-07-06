@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User List</title>
+    <link rel="stylesheet" href="result.css">"
+</head>
+<body>
+	
+<h2>User Details</h2>
+
+<table class="table table-bordered">
+    <thead id="row">
+        <tr>
+            <th>User ID</th>
+            <th>Email</th>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Address</th>
+            <th>Role</th>
+        </tr>
+    </thead>
+    <tbody id="body">
+		<tr th:if="${users == null or #lists.isEmpty(users)}">
+		        <td colspan="6">No users found.</td>
+		    </tr>
+        <tr th:each="u : ${users}">
+            <td th:text="${u.userId}">UserID</td>
+            <td th:text="${u.email}">Email</td>
+            <td th:text="${u.first_name + u.last_name}">Name</td>
+            <td th:text="${u.ph_number}">Phone</td>
+            <td th:text="${u.address}">Address</td>
+            <td th:text="${u.role}">Role</td>
+        </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

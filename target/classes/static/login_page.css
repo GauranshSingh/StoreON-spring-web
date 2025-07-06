@@ -1,0 +1,144 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+img {
+    display: block;
+    max-width: 100%;
+}
+
+#body{
+    color: #fefae0;
+}
+#navbar{
+    height: 00px;
+    width: auto;
+}
+#body{
+    background-color: #181818;
+    color: #fefae0;
+    display: flex;
+  justify-content: space-between; /* pushes items to left and right */
+  /* border: 1px solid gray; */
+  padding: 0px;
+  background-image: url("/images/sora_background_3.jpg");
+}
+#blue_box{
+    background-color: #181818;
+    width: 750px;
+    border-radius: 5%;
+    height:900px;
+    margin-top: auto;
+    margin-bottom: 100px;
+	background-image: url("/images/sora_background_3.jpg");
+}
+.button{
+    justify-content: center;
+    color: #fefae0;
+    background-color: #204158;
+    border-radius: 10%;
+}
+/* #left_side{
+    background-color: #252323;
+    width: 1000px;
+} */
+.button:hover{
+    color: #f08804;
+}
+#forgot:hover{
+    color:#f08804
+}
+#signin:hover{
+    color:#f08804
+}
+#forgot{
+    color: #fefae0;
+}
+#signin{
+    color: #fefae0;
+	margin-top:50px;
+	
+}
+#text_1:hover{
+    border:4px solid #f08804;
+}
+#text_2:hover{
+    border:4px solid #f08804;
+}
+#right_side{
+    /* margin-left: 1500px; */
+    height: 1345px;
+    width: 1050px;
+    background-color: #14293a;
+    justify-content: center;
+    align-items: center;
+    border-left: 4px solid #f08804;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#picture{
+    height:1200px;
+    margin-top:50px;
+    margin-left:250px;
+    border-radius: 5%;
+    width:900px
+}
+#logo{
+    margin-top: 100px;
+}
+#Login_text{
+    font-size:100px;
+    margin-left: 130px;
+}
+#text_1{
+    height: 50px;
+    width: 500px;
+    margin-left:120px;
+    border-radius: 5%;
+    margin-bottom: 20px;
+    font-size: 27px;
+}
+#text_2{
+    height: 50px;
+    width: 500px;
+    margin-left:120px;
+    border-radius: 5%;
+    font-size: 27px;
+    margin-bottom: 17px;
+}
+#forgot{
+    font-size: 30px;
+    margin-top: 50px;
+	border-top:50px;
+    margin-left: 280px;
+}
+#Sign_in{
+    margin-left: 270px;
+    margin-top: 25px;
+    height: 52px;
+    width: 230px;
+    font-size: 30px;
+}
+#t_1{
+    margin-left: 247px;
+    font-size: 30px;
+}
+#t_2{
+    margin-left: 310px;
+    font-size: 30px;
+	color:#fefae0;
+}
+#Create_an_acc{
+    margin-left: 270px;
+    margin-top: 20px;
+    height: 52px;
+    width: 230px;
+    font-size: 30px; 
+}
+#Incorrect{
+	color: red;
+	margin-left: 120px;
+	font-size:28px;
+}

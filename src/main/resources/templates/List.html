@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="List.css">
+<body id="full_screen">
+        <header>
+		<div th:replace="fragments/header :: header(${loggedInUser})"></div>
+        </header>
+    <main id="main">
+        <div id="left_side"></div>
+        <div id="right_side">
+        <div id="row_1">
+
+        <div id="box_1">
+        <img id="photo_1" src="images/ipad_1.jpg" alt="ipad_image">
+        <div id="text_1 ">
+            <div class="container">
+            <h3>Apple iPad 11-inch: A16 chip, 11-inch Model</h3><br>
+            </div>
+            <h1>$250</h1>
+        </div>
+        </div>
+
+        <div onclick="window.location.href='Product';" id="box_2">
+        <img id="photo_2" src="images/Ipad_2.jpg" alt="ipad_image">
+        <div id="text_2 ">
+          <div class="container">
+            <h3>Apple iPad Air 11-inch with M3 chip Built</h3><br>
+            </div>
+            <h1>$1000</h1>
+        </div>
+        </div>
+
+        <div id="box_3">
+        <img id="photo_3" src="images/Ipad_5.jpg" alt="ipad_image">
+        <div id="text_3 ">
+          <div class="container">
+            <h3>Apple iPad (10th Generation): with A14 Bionic chip</h3><br>
+            </div>
+            <h1>$439</h1>
+        </div>
+        </div>
+
+        <div id="box_4">
+        <img id="photo_4" src="images/Ipad_4.jpg" alt="ipad_image">
+        <div id="text_4 ">
+          <div class="container">
+            <h3>2021 Apple iPad Pro (12.9-inch, Wi-Fi, 128GB) - Space Gray (Renewed)</h3><br>
+            </div>
+            <h1>$489</h1>
+        </div>
+        </div>
+        </div>
+
+
+         <div id="row_2">
+
+        <div id="box_5">
+        <img id="photo_5" src="images/ipad_1.jpg" alt="ipad_image">
+        <div id="text_5 ">
+            <h3>Apple iPad 11-inch: A16 chip, 11-inch Model</h3><br>
+            <h1>$250</h1>
+        </div>
+        </div>
+
+        <div id="box_6">
+        <img id="photo_6" src="images/Ipad_2.jpg" alt="ipad_image">
+        <div id="text_6 ">
+            <h3>Apple iPad Air 11-inch with M3 chip Built</h3><br>
+            <h1>$119</h1>
+        </div>
+        </div>
+
+        <div id="box_7">
+        <img id="photo_7" src="images/Ipad_5.jpg" alt="ipad_image">
+        <div id="text_7 ">
+            <h3>Apple iPad (10th Generation): with A14 Bionic chip</h3><br>
+            <h1>$439</h1>
+        </div>
+        </div>
+
+        <div id="box_8">
+        <img id="photo_8" src="images/Ipad_4.jpg" alt="ipad_image">
+        <div id="8 ">
+            <h3>2021 Apple iPad Pro (12.9-inch, Wi-Fi, 128GB) - Space Gray (Renewed)</h3><br>
+            <h1>$489</h1>
+        </div>
+        </div>
+        </div>
+
+
+         <div id="row_3">
+
+        <div id="box_9">
+        <img id="photo_9" src="images/ipad_1.jpg" alt="ipad_image">
+        <div id="text_9 ">
+            <h3>Apple iPad 11-inch: A16 chip, 11-inch Model</h3><br>
+            <h1>$250</h1>
+        </div>
+        </div>
+
+        <div id="box_10">
+        <img id="photo_10" src="images/Ipad_2.jpg" alt="ipad_image">
+        <div id="text_10 ">
+            <h3>Apple iPad Air 11-inch with M3 chip Built</h3><br>
+            <h1>$119</h1>
+        </div>
+        </div>
+
+        <div id="box_11">
+        <img id="photo_11" src="images/Ipad_5.jpg" alt="ipad_image">
+        <div id="text_11 ">
+            <h3>Apple iPad (10th Generation): with A14 Bionic chip</h3><br>
+            <h1>$439</h1>
+        </div>
+        </div>
+
+        <div id="box_12">
+        <img id="photo_12" src="images/Ipad_4.jpg" alt="ipad_image">
+        <div id="text_12 ">
+            <h3>2021 Apple iPad Pro (12.9-inch, Wi-Fi, 128GB) - Space Gray (Renewed)</h3><br>
+            <h1>$489</h1>
+        </div>
+        </div>
+        </div>
+        </div>
+        </main>
+        <footer id="footer">
+			<div class="foot_panel1"><button id="to_top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">
+					  		  	  Back to Top
+					  		  	</button></div>
+			<object type="text/html" data="footer.html" width="100%" height="540px" style="border: none;"></object>
+</footer>
+
+
+</body>
+<script>
+	window.addEventListener("pageshow", function (event) {
+	    if (event.persisted) {
+	        window.location.reload();
+	    } 
+	});
+</script>
+</html>

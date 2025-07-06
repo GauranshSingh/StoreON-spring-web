@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StoreOn Home</title>
+    <link rel="stylesheet" href="Webpage.css">
+</head>
+<body>
+    <header>
+		<div th:replace="fragments/header :: header(${loggedInUser})"></div>
+    </header>
+    <main id="purple_this">   
+        <img src="images/Amazon_Background.jpg" id="background_image" alt="Description of image">
+        <div id="side">
+            <div id="purple" style="position: relative;">
+                <div id="photos" 
+                     class="image-card" 
+                     th:each="user : ${users}" 
+                     onclick="window.location.href='List';">
+                    <img th:src="@{'/images/' + ${user.category_images}}"
+                         style="width: 90%; height: 90%; object-fit: cover; margin-top:28px;" /> 
+                    <div class="hover-text">
+                        <div th:text="${user.category}">category</div>
+                        <hr style="border: 2px solid white; width: 320px; margin: 8px;">
+                        <div th:text="'Starting at Rupees ' + ${user.range}">range</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+	<div class="foot_panel1"><button id="to_top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">
+	  Back to Top
+	</button></div>
+<footer id="footer">
+	<object type="text/html" data="footer.html" width="100%" height="540px" style="border: none;"></object>
+</footer>
+</body>
+<script>
+window.addEventListener("pageshow", function (event) {
+    if (event.persisted) {
+        window.location.reload();
+    } 
+});
+</script>
+</html>

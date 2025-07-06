@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StoreOn Home</title>
+    <link rel="stylesheet" href="Webpage.css">
+</head>
+<body>
+	<div th:fragment="header(loggedInUser)">
+<div id="navbar">
+            <img src="images/Storeon_logo_trial_4.png" id="logo" alt="StoreOn Logo">
+            <input style="color:black;" type="text" id="text" placeholder="Search StoreOn.in">
+            <button id="button" onclick="alert('You clicked Search!')">Search</button>
+			
+            <a id="Account" href="...">Account</a>
+			<p id="Welcome">Welcome Back!</p><br><br>
+			
+			    <span id="New_releases" th:text="${loggedInUser}">Firstname</span>
+				<img src="images/edit_image_2.png" id="edit_image">
+			</div>
+        	<div id="sub_navbar">
+			<a id="My_Cart" href="...">My Cart</a>
+            <a id="Todays_Deal" href="...">Today's Deal</a>
+            <a id="Customer_Service" href="...">Customer Service</a>
+            <a id="Sell" href="...">Sell</a>   
+            <a id="Resale" href="...">Resale</a>
+            <a id="Best_sellers" href="...">Best sellers</a>
+            <a style="font-size:40px;" id="log_out_button"  href="/logout">Logout</a>
+        </div>
+	</div>
+</body>

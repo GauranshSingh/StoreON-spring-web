@@ -1,0 +1,198 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+#navbar{
+    height: 00px;
+    width: auto;
+}
+#body{
+    background-color: #181818;
+    color: #fefae0;
+    display: flex;
+  justify-content: space-between; /* pushes items to left and right */
+  /* border: 1px solid gray; */
+  padding: 10px;
+}
+#grey_box{
+    width: 2050px;
+    border-radius: 5%;
+    height:1050px;
+    margin-top: auto;
+    margin-bottom: 100px;
+    margin-left: 0px;
+    /* justify-content: center; */
+ /* adjust path if needed */
+	background-image: url(Images/sora_background_3.jpg);
+	
+
+}
+.button{
+    justify-content: center;
+    color: #fefae0;
+    background-color: #204158;
+    border-radius: 10%;
+}
+/* #left_side{
+    background-color: #252323;
+    width: 1000px;
+} */
+.button:hover{
+    color: #f08804;
+}
+#forgot:hover{
+    color:#f08804
+}
+#signin:hover{
+    color:#f08804
+}
+#forgot{
+    color: #fefae0;
+
+}
+#signin{
+    color: #fefae0;
+}
+
+#text_2:hover{
+    border:4px solid #f08804;
+}
+#body{
+    /* margin-left: 1500px; */
+    height: 1323px;
+    width: 2536px;
+    background-color: #14293a;
+    justify-content: center;
+    align-items: center;
+    border-left: 4px solid #f08804;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#picture{
+    height:1200px;
+    margin-top:50px;
+    margin-left:100px;
+    border-radius: 5%;
+    width:900px
+}
+#logo{
+    margin-top: 100px;
+}
+#Login_text{
+    font-size:100px;
+    margin-left: 740px;
+}
+#text_1{
+    height: 50px;
+    width: 500px;
+    margin-left:120px;
+    border-radius: 5%;
+    margin-bottom: 20px;
+    font-size: 27px;
+}
+#text_2{
+    height: 50px;
+    width: 500px;
+    margin-left:120px;
+    border-radius: 5%;
+    font-size: 27px;
+    margin-bottom: 50px;
+}
+#forgot{
+    font-size: 30px;
+    margin-top: 50px;
+    margin-left: 280px;
+}
+#Sign_in{
+    margin-left: 435px;
+    margin-top: 25px;
+    height: 60px;
+    width: 300px;
+    font-size: 30px;
+}
+#t_1{
+    margin-left: 235px;
+    font-size: 30px;
+}
+#t_2{
+    margin-left: 310px;
+    font-size: 30px;
+}
+#Create_an_acc{
+    margin-left: 270px;
+    margin-top: 20px;
+    height: 52px;
+    width: 230px;
+    font-size: 30px; 
+}
+.text_input {
+  width: 250px;
+  padding: 10px;
+  margin-right: 30px; 
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#first_row, #second_row, #third_row {
+  margin-bottom: 20px; 
+}
+.text_input:hover{
+    border:4px solid #f08804;
+}
+#firstName{
+      height: 45px;
+    width : 500px;
+    margin-left:380px;
+    margin-right:400px;
+    font-size: 33px;
+    margin-bottom: 30px;
+    margin-top: 50px;
+}
+#lastName{
+    height: 45px;
+    width : 500px;
+    margin-left:35px;
+    margin-right:400px;
+    font-size: 33px;
+    margin-bottom: 30px;
+    margin-top: 50px;
+}
+#ph_number{
+    height: 45px;
+    width : 500px;
+    margin-left:380px;
+    margin-right:400px;
+    font-size: 33px;
+    margin-bottom: 30px;
+}
+#address{
+    height: 45px;
+    width : 500px;
+    margin-left:30px;
+    margin-right:400px;
+    font-size: 33px;
+    margin-bottom: 30px;
+}
+#Email_address{
+    height: 45px;
+    width : 500px;
+    margin-left:380px;
+    margin-right:400px;
+    font-size: 33px;
+    margin-bottom: 30px;
+}
+#password{
+    height: 45px;
+    width : 500px;
+    margin-left:30px;
+    margin-right:400px;
+    font-size: 33px;
+    margin-bottom: 30px;
+}

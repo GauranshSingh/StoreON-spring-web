@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="product.css">
+	<link rel="stylesheet" href="Webpage.css">
+</head>
+<body>
+    <header>
+        <div th:replace="fragments/header :: header(${loggedInUser})"></div>
+    </header>
+    <main id="purple_this">
+
+      <img id="image" src="images/ipad_6.jpg" alt="Ipad image">
+
+      <div id="right_side">
+
+        <div id="name">
+        <h2>Apple iPad (10th Gen) 64 GB ROM 10.9 inch with Wi-Fi+5G (Silver)</h1>
+          <p id="rating">★★★★☆</p> 
+          <p id="Assured" >StoreON <img id="okay_tick" src="images/Okay_tick.png"> Assured product  </p>
+          </div>
+          <br>
+          <div id="price">
+            <h4>Special price</h4>
+			<s id="old_price" style="font-size: 55px; color: #f08804; margin-left: 00px;" >$1500</s>
+            <h1>$1000</h1>
+          </div>
+
+          <button id="buy_now">Buy now</button>
+          <br>
+          <h3>Available offers:</h3>
+          <br>
+          <p>
+            • Special PriceGet extra 18% off (price inclusive of cashback/coupon)T&C
+            <br>
+            <br>
+            • Bank Offer100% Cashback upto 500Rs on Axis Bank SuperMoney Rupay CC UPI transactions on super.money UPIT&C
+            <br>
+            <br>
+            • Bank Offer5% cashback on Flipkart Axis Bank Credit Card upto ₹4,000 per statement quarterT&C
+          </p>
+          <br><br>
+          <h3>Highlights:</h3>
+          <br>
+
+          <br>
+          <p>
+            ★ 64 GB ROM
+            <br>
+            <br>
+            ★ 27.69 cm (10.9 inch) Full HD Display
+            <br>
+            <br>
+            ★ 12 MP Primary Camera | 12 MP Front
+            <br>
+            <br>
+            ★ iPadOS 16 | Battery: Lithium Polymer
+            <br>
+            <br>
+            ★ Ideal Usage: Entertainment, For Kids, Reading and Browsing
+            <br>
+            <br>
+            ★ Processor: A14 Bionic Chip (64-bit Architecture) with Neural Engine
+            <br>
+            <br>
+
+          </p>
+
+          <br>
+          <h3>discription-</h3>
+          <p>Experience the perfect balance of performance, portability, and power with the Apple iPad (10th Generation). Featuring a stunning 10.9-inch Liquid Retina display and powered by the fast A14 Bionic chip, this iPad delivers smooth multitasking, crystal-clear visuals, and seamless connectivity with Wi-Fi + 5G support.</p>
+
+          <br><br>
+          <p>Free Delivery </p>
+ 
+      </div>
+
+    </main>
+<footer id="footer">
+	<div class="foot_panel1"><button id="to_top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">
+		  		  	  Back to Top
+		  		  	</button></div>
+ 
+	<object type="text/html" data="footer.html" width="100%" height="540px" style="border: none;"></object>
+</footer>
+</body>
+<script>
+	window.addEventListener("pageshow",function(event) {
+	if(event.persistent)
+		window.location.reload();
+	});
+</script>
+</html>

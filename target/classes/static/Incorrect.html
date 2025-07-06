@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Incorrect.css">
+</head>
+<body>
+    <header>
+        <div id="navbar">
+        </div>
+    </header>
+    <div id="body">
+        <img src="images/sign_in_4.png" alt="sign in picture" id="picture">
+        <div id="left_side">
+        </div>
+        <div id="right_side">
+            <img id="logo" src="images/Storeon_logo_trial_4.png" alt="">
+            <br>
+            <br>
+        <div id="blue_box">
+          <h1 id="Login_text">Login Page</h1>
+          <form action="http://localhost:8090/login" method="post">   <!-- post helped me to conect to post mapping in controller -->
+              <input id="text_1" type="text" name="email" placeholder="Enter Email address" required><br>
+              <input id="text_2" type="password" name="password" placeholder="Enter your password" required>
+			  <div id="Incorrect">Incorrect credentials</div>
+              <a id="forgot"  style="text-decoration: none;">Forgot password?</a><br>
+              <button type="submit" style="cursor: pointer;" class="button" id="Sign_in">Log in</button>
+          </form>
+          <br><br><br>
+          <p id="t_1">Don't have an account?</p>
+		  <a id="t_2" style="text-decoration: none;">Sign up now</a>
+		  <button onclick="window.location.href='http://localhost:8090/Signup_STOREON.html'" href="http://localhost:8091/Signup_STOREON.html" style="cursor: pointer;" class="button" id="Create_an_acc">Sign up</button>
+        </div>
+
+        </div>
+    </div>
+</body>
+</html>
