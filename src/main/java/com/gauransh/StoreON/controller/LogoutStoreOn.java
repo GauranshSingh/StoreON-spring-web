@@ -9,9 +9,7 @@ import jakarta.servlet.http.*;		// this is the best way...only use *
 public class LogoutStoreOn {
 	@GetMapping("/logout")
 	public String logout(HttpSession session) {
-		System.out.println("1");
 		session.invalidate();
-		System.out.println("2");		
 		return "redirect:/login_page.html";
 	}
 }

@@ -18,9 +18,10 @@ public class ExtractUserController {
     @GetMapping("/Webpage")
     public String getAllUsers(Model model,HttpSession session){
     	String loggedInUser = session.getAttribute("loggedInUser").toString();
-    	String lastname =session.getAttribute("user_lastname").toString();
+		if(loggedInUser==null) {
+			return"redirect:/login_page.html";
+		}
         List<ExtractUser> users = extractUser.findAll();		// these users are actually products_categories...I just named them wrong
-    	model.addAttribute("lastname",lastname);
         model.addAttribute("loggedInUser",loggedInUser);
         model.addAttribute("users", users);						// these users are actually products_categories...I just named them wrong
         return "Webpage";  // takes to Webpage.html

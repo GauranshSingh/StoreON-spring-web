@@ -15,7 +15,7 @@
 		<div id="row_1">
 		  <div th:each="Product : ${products}"
 		       class="image-card"
-		       onclick="window.location.href='Product'">
+		       onclick="window.location.href='product'">
 		    <img class="photo_2" th:src="@{'/images/Phones_images/' + ${Product.Image}}" alt="Product Image">
 		    <div id="text_2">
 		      <div class="container">

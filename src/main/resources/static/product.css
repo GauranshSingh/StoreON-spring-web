@@ -1,8 +1,4 @@
-* {
-    padding: 0;
-    margin: 0;
-    /* color: white; */
-}
+
 
 #logo{
     font-size: 50px;
@@ -207,22 +203,24 @@ a{
   left: 100px;       /* distance from left */
   width: 1000px;     /* optional */
   height: 1060px;
-  margin-top: 70px;
+  margin-top: 100px;
   margin-left:100px;
   bottom: 1000px;
+ 
   z-index: 1;    /* stays above other elements */
   border: 15px solid #14293a;
 }
 
 #right_side{
     background-image: url("images/sora_background_4.jpg");
-    height:1900px;
+    height:1800px;
     width:1200px;
     margin-right: 100px ;
     margin-top:100px;
     margin-left:100px;
     border: 15px solid #14293a;
     border-radius: 1%;
+	margin-bottom:000px;
 }
 
 #name{
@@ -355,6 +353,7 @@ h3{
     display: flex;
     height: 60px;
     font-size: 55px;
+	margin-top:500px;
 }
 /* .foot_panel1:hover{
     color: #f08804;

@@ -13,7 +13,7 @@
     </header>
     <main id="purple_this">
 
-      <img id="image" src="images/ipad_6.jpg" alt="Ipad image">
+      <img id="image" src="images/ipad_6.jpg" alt="Ipad image" style=" margin-bottom:200px;">
 
       <div id="right_side">
 
@@ -64,8 +64,7 @@
             <br>
             <br>
             ★ Processor: A14 Bionic Chip (64-bit Architecture) with Neural Engine
-            <br>
-            <br>
+
 
           </p>
 
@@ -88,9 +87,10 @@
 </footer>
 </body>
 <script>
-	window.addEventListener("pageshow",function(event) {
-	if(event.persistent)
-		window.location.reload();
+	window.addEventListener("pageshow", function (event) {
+	    if (event.persisted) {
+	        window.location.reload();
+	    } 
 	});
 </script>
 </html>

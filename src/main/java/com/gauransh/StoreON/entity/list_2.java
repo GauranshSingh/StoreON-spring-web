@@ -9,7 +9,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name="list")
-public class Product {
+public class list_2{
 	@Id
 	@Column(name="name")
 	private String Name;
