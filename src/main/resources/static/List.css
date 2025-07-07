@@ -205,23 +205,6 @@ a{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #full_screen{
     background-color: #204158;
     background-image: url("Images/Background_trial_9.jpg");
@@ -241,215 +224,74 @@ a{
     border-radius: 1%;
 }
 
-h3{
-    color:#fefae0;
+h3 {
+    color: #fefae0;
     font-size: 30px;
-    padding: 15px;
-    padding-bottom: 0px;
+    margin: 10px 0 5px 0;
     font-family: Arial, Helvetica, sans-serif;
-    font-weight: 100;
+    font-weight: 400;
 }
 
-h1{
-    color:#fefae0;
-    font-size: 50px;
-    padding: 15px;
-    padding-top: 0px;
-}
-
-#row_1{
-    justify-content: center;
+h1 {
+    color: #fefae0;
+    font-size: 28px;
+    margin: 5px 0;
 }
 
 
-#box_1:hover, #box_2:hover, #box_3:hover, #box_4:hover, #box_5:hover, #box_6:hover, #box_7:hover, #box_8:hover, #box_9:hover, #box_10:hover, #box_11:hover, #box_12:hover{
+
+
+
+.image-card {
+    height: 530px;
+    width: 440px;
+    background: linear-gradient(to bottom, #204158, #1B3A4E);
+    border: 2px solid black;
+    color: #fefae0;
+    font-size: 20px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.image-card img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 2px;
+}
+
+.image-card:hover {
+    transform: scale(1.04);
+    color: #f08804;
+}
+
+
+#box_2:hover{
     transform: scale(1.04);
     color:#f08804;
 }
-#row_2{
-    justify-content: center;
-}
-#row_3{
-    justify-content: center;
-}
+
 
 .container{
     width:450px;
     height:140px;
 }
 
-#photo_1, #photo_2, #photo_3, #photo_4, #photo_5, #photo_6, #photo_7, #photo_8, #photo_9, #photo_10, #photo_11, #photo_12{
+#photo_2{
     height: 400px;
     width: 385px;
     margin-top: 30px;
     margin-left: 33px;
-    border: 5px solid #fefae0;
+	object-fit: cover;
 }
 
-#box_1{
-    position: absolute;
-    margin-left: 500px;
-    margin-top: 70px;
-    border: 12px solid #204158 ;
-    width:443px;
-    height: 793px;
-    background-image: url("Images/sora_background_4.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    transition: transform 0.4s;
-}
 
-#box_2{
-    position: absolute;
-    margin-left: 1000px;
-    margin-top: 70px;
-    border: 12px solid #204158;
-    width:443px;
-    height: 793px;
-    background-image: url("Images/sora_background_4.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    transition: transform 0.4s;
-}
 
-#box_3{
-    position: absolute;
-    margin-left: 1500px;
-    margin-top: 70px;
-    border: 12px solid #204158;
-    width:443px;
-    height: 793px;
-    background-image: url("Images/sora_background_4.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    transition: transform 0.4s;
-}
-#box_4{
-    position: absolute;
-    margin-left: 2000px;
-    margin-top: 70px;
-    border: 12px solid #204158;
-    width:443px;
-    height: 793px;
-    background-image: url("Images/sora_background_4.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    transition: transform 0.4s;
-}
 
-#box_5{
-    position: absolute;
-    margin-left: 500px;
-    margin-top: 920px;
-    border: 12px solid #204158;
-    width:443px;
-    height: 793px;
-    background-image: url("Images/sora_background_4.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    transition: transform 0.4s;
-}
-
-#box_6{
-    position: absolute;
-    margin-left: 1000px;
-    margin-top: 920px;
-    border: 12px solid #204158;
-    width:443px;
-    height: 793px;
-    background-image: url("Images/sora_background_4.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    transition: transform 0.4s;
-}
-
-#box_7{
-    position: absolute;
-    margin-left: 1500px;
-    margin-top: 920px;
-    border: 12px solid #204158;
-    width:443px;
-    height: 793px;
-    background-image: url("Images/sora_background_4.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    transition: transform 0.4s;
-}
-#box_8{
-    position: absolute;
-    margin-left: 2000px;
-    margin-top: 920px;
-    border: 12px solid #204158;
-    width:443px;
-    height: 793px;
-    background-image: url("Images/sora_background_4.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    transition: transform 0.4s;
-}
-
-#box_9{
-    position: absolute;
-    margin-left: 500px;
-    margin-top: 1770px;
-    border: 12px solid #204158;
-    width:443px;
-    height: 793px;
-    background-image: url("Images/sora_background_4.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    transition: transform 0.4s;
-}
-
-#box_10{
-    position: absolute;
-    margin-left: 1000px;
-    margin-top: 1770px;
-    border: 12px solid #204158;
-    width:443px;
-    height: 793px;
-    background-image: url("Images/sora_background_4.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    transition: transform 0.4s;
-}
-
-#box_11{
-    position: absolute;
-    margin-left: 1500px;
-    margin-top: 1770px;
-    border: 12px solid #204158;
-    width:443px;
-    height: 793px;
-    background-image: url("Images/sora_background_4.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    transition: transform 0.4s;
-}
-#box_12{
-    position: absolute;
-    margin-left: 2000px;
-    margin-top: 1770px;
-    border: 12px solid #204158;
-    width:443px;
-    height: 793px;
-    background-image: url("Images/sora_background_4.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    transition: transform 0.4s;
-}
 
 
 @keyframes moveDown {
@@ -466,6 +308,16 @@ h1{
     max-width: 100%;
     height: 1500px;
 }
+
+
+
+
+
+
+
+
+
+
 #footer{
     margin-top:2640px;
      background-color: #fefae0;
@@ -475,6 +327,12 @@ h1{
     height: 450px;
     font-size: 50px; */
 }
+
+
+
+
+
+
 #black{
     color: black;
     font-size: 50px;
@@ -579,3 +437,84 @@ button {
 	margin-top:0px;
 	border-radius: 5%;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#row_1 {
+    display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
+
+
+    gap: 10px;
+    justify-items: center;
+    margin-top: 50px;
+    padding: 30px;
+	margin-left:300px;
+}
+
+#box_2 {
+    position: absolute;
+    margin-left: 600px;
+    margin-top: 270px;
+}
+
+
+.image-card {
+    width: 443px;
+    height: 793px;
+    border: 12px solid #204158;
+    background-image: url("Images/sora_background_4.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.4s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.image-card:hover {
+    transform: scale(1.04);
+    color: #f08804;
+}
+
+.photo_2 {
+    height: 400px;
+    width: 385px;
+    object-fit: cover;
+    margin-top: 30px;
+    margin-left: 33px;
+}
+
+
+#right_side {
+    margin-left: 700px;
+    max-width: calc(100% - 700px);
+}
+
+#row_1 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
+    gap: 10px;
+    justify-content: start;
+    margin-top: 50px;
+    padding: 20px;
+}
+
+
