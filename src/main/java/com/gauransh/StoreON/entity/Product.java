@@ -10,10 +10,10 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name="list")
 public class Product {
-
+	@Id
 	@Column(name="name")
 	private String Name;
-	@Id
+	
 	@Column(name="category")
 	private String Category;
 	

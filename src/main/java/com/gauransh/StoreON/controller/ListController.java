@@ -15,14 +15,19 @@ import jakarta.servlet.http.HttpSession;
 public class ListController {
 	
 	@Autowired
-	private ProductRepository Product;
+	private ProductRepository productRepository;
 	
 	@GetMapping("/List")
 	public String getdata(HttpSession session, Model model){
-		List<Product> products = Product.findAll();
+		List<Product> products = productRepository.findAll();
 	    model.addAttribute("products", products);
 		String loggedInUser =(String) session.getAttribute("loggedInUser");
 		System.out.println(products);
+		System.out.println("Products size = " + products.size());
+		for (Product p : products) {
+		    System.out.println(p.getName() + " | " + p.getCategory() + " | " + p.getPrice());
+		}
+
 
 		model.addAttribute("loggedInUser",loggedInUser);
 		return "List";
