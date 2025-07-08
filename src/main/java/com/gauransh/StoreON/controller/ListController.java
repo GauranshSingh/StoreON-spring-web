@@ -19,10 +19,13 @@ public class ListController {
 		List<list_2> products = productRepository.findAll();
 	    model.addAttribute("products", products);
 		String loggedInUser =(String) session.getAttribute("loggedInUser");
+		
 		if(loggedInUser==null) {
 			return "redirect:/login_page.html";
 		}
+		
+		
 		model.addAttribute("loggedInUser",loggedInUser);
 		return "List";
-	}
+			}
 }

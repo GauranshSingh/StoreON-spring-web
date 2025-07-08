@@ -206,7 +206,7 @@ a{
   margin-top: 100px;
   margin-left:100px;
   bottom: 1000px;
- 
+  background-image: url("images/sora_background_4.jpg");
   z-index: 1;    /* stays above other elements */
   border: 15px solid #14293a;
 }

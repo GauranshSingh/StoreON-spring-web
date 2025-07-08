@@ -10,7 +10,12 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name="list")
 public class list_2{
+	
 	@Id
+	
+	@Column(name="id")
+	private Integer productId;
+	
 	@Column(name="name")
 	private String Name;
 	
@@ -23,9 +28,17 @@ public class list_2{
 	@Column(name="price")
 	private BigDecimal Price;
 	
-	public void setName(String Name) {
+	public void setProductId(String Name) {
 		this.Name=Name;
 	}
+	
+    public Integer getProductId() {
+        return productId;
+    }
+
+    public void setProductId(Integer productId) {
+        this.productId = productId;
+    }
 	
 	public String getName() {
 		return Name;

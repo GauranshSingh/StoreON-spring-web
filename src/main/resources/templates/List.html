@@ -5,23 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="List.css">
-<body id="full_screen">
-        <header>
+	<header>
 		<div th:replace="fragments/header :: header(${loggedInUser})"></div>
-        </header>
+	</header>
+<body id="full_screen">
+
     <main id="main">
 		  <div id="left_side"></div>
 		  
 		<div id="row_1">
 		  <div th:each="Product : ${products}"
-		       class="image-card"
-		       onclick="window.location.href='product'">
+		       class="image-card">
 		    <img class="photo_2" th:src="@{'/images/Phones_images/' + ${Product.Image}}" alt="Product Image">
 		    <div id="text_2">
 		      <div class="container">
 		        <h3 th:text="${Product.Name}">Name</h3><br>
 		      </div>
-		      <h1 th:text="'$'+${Product.Price}">$1000</h1>
+			  <form th:action="@{/product}" method="get">
+			  			      <input type="hidden" name="productId" th:value="${Product.productId}" />
+			  			      <button id="Buy_now" style="background-color: #f08804;">Buy Now!</button>
+			  			  </form>
+		      <h1 id="price" th:text="'$'+${Product.Price}">$1000</h1>
 		    </div>
 		  </div>
 		</div>

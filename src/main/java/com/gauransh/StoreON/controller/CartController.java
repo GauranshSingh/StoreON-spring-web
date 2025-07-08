@@ -23,12 +23,11 @@ public class CartController {
 		//session.setAttribute("cart",cartDetails);
 		
 		
-//		model.addAttribute("productdetails",productdetails);
-//		String loggedInUser =(String) session.getAttribute("loggedInUser");
-//		model.addAttribute("loggedInUser",loggedInUser);
-//		if(loggedInUser==null) {
-//			return"redirect:/login_page.html";
-//		}
-		return "product";
+		String loggedInUser =(String) session.getAttribute("loggedInUser");
+		if(loggedInUser==null) {
+			return "redirect:/login_page.html";
+		}
+		model.addAttribute("loggedInUser",loggedInUser);
+		return "MyCart";
 	}
 }

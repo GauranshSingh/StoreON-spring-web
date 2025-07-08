@@ -13,7 +13,7 @@
     </header>
     <main id="purple_this">
 
-      <img id="image" src="images/ipad_6.jpg" alt="Ipad image" style=" margin-bottom:200px;">
+      <img id="image" th:src="'Images/Phones_images/'+ ${product.imageUrl}" alt="Product image" style=" margin-bottom:200px;">
 
 	    <div id="right_side">
 	              
@@ -40,7 +40,8 @@
 	              <br>
 	              <h3>Available offers:</h3>
 	              <br>
-	              <p th:text="${product.offers}">
+	              		  <p th:utext="${product.offers}"></p>
+
 	                  • Special Price Get extra 18% off (price inclusive of cashback/coupon) T&C
 	              </p>
 	              
@@ -48,12 +49,7 @@
 	              <h3>Highlights:</h3>
 	              <br>
 	              <p th:utext="${product.highlights}">
-	                  ★ 64 GB ROM<br><br>
-	                  ★ 27.69 cm (10.9 inch) Full HD Display<br><br>
-	                  ★ 12 MP Primary Camera | 12 MP Front<br><br>
-	                  ★ iPadOS 16 | Battery: Lithium Polymer<br><br>
-	                  ★ Ideal Usage: Entertainment, For Kids, Reading and Browsing<br><br>
-	                  ★ Processor: A14 Bionic Chip (64-bit Architecture) with Neural Engine
+
 	              </p>
 	              
 	              <br>

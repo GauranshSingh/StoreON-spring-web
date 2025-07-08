@@ -209,8 +209,7 @@ a{
     background-color: #204158;
     background-image: url("Images/Background_trial_9.jpg");
     position: relative;
-	height: 2800px;
-
+	height: auto;
 }
 
 
@@ -278,8 +277,9 @@ h1 {
 
 
 .container{
+	margin-top:10px;
     width:450px;
-    height:140px;
+    height:60px;
 }
 
 #photo_2{
@@ -519,4 +519,27 @@ button {
     padding: 20px;
 }
 
+
+
+#Buy_now {
+  color: #181818  ;
+  border: none;
+  padding: 15px 40px;
+  font-size: 28px;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+#Buy_now:hover {
+  background-color: #d97706;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+#price{
+	margin-top:20px;
+}
 
