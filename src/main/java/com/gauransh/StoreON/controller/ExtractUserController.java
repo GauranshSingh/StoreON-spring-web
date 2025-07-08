@@ -23,7 +23,8 @@ public class ExtractUserController {
 		}
         List<ExtractUser> users = extractUser.findAll();		// these users are actually products_categories...I just named them wrong
         model.addAttribute("loggedInUser",loggedInUser);
-        model.addAttribute("users", users);						// these users are actually products_categories...I just named them wrong
+        model.addAttribute("users", users);				// these users are actually products_categories...I just named them wrong
         return "Webpage";  // takes to Webpage.html
+
     }
 }

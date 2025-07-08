@@ -34,9 +34,10 @@
 	                  <s id="old_price" th:text="'$' + ${product.oldPrice}">$1500</s>
 	                  <h1 th:text="'$' + ${product.newPrice}">$1000</h1>
 	              </div>
-	              
-	              <button id="buy_now">Buy now</button>
-	              
+	              <form th:action="@{/MyCart}" method="post" >
+					<input type="hidden" name="productId" th:value="${product.productId}" />
+				  <button type="submit" id="buy_now" onclick="changeText(this)">Add to Cart</button>
+				  </form>
 	              <br>
 	              <h3>Available offers:</h3>
 	              <br>
@@ -77,5 +78,17 @@
 	        window.location.reload();
 	    } 
 	});
+	function changeText(button) {
+			    button.textContent = "Added to Cart!";
+			    button.disabled = true; 
+			  }
+			function changeText(button) {
+			    button.textContent = "Added to Cart!";
+			    setTimeout(() => {
+			        button.disabled = true;
+			    }, 50);
+			    return true; // allow form to submit
+			}
+
 </script>
 </html>

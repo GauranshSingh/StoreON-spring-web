@@ -22,7 +22,7 @@ public class LoginController {
         Login_User user = userRepository.findByEmail(email);		// finds the user
         if (user != null && user.getPassword().equals(password)) {
         	session.setAttribute("loggedInUser",user.getFirstName());
-        	session.setAttribute("user_lastname",user.getLastName());
+        	session.setAttribute("user_id",user.getUserId());
 //        	String loggedInUser = session.getAttribute("loggedInUser"); //should i save this in entity
 //        	model.addAttribute("loggedInUser",loggedInUser);
             return "redirect:/Webpage"; //  This now works

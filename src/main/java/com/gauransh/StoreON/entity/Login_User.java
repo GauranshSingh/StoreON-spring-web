@@ -8,7 +8,7 @@ public class Login_User {
 	
     @Id
     @Column(name = "user_id")  
-    private String userId;
+    private Integer userId;
 
     @Column(name = "first_name")
     private String firstName;
@@ -31,10 +31,10 @@ public class Login_User {
     @Column(name = "ph_number")
     private String Phnumber;
 
-    public String getUserId() {
+    public Integer getUserId() {
         return userId;
     }
-    public void setUserId(String userId) {
+    public void setUserId(Integer userId) {
         this.userId = userId;
     }
     public String getFirstName() {

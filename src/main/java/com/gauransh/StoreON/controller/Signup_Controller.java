@@ -13,7 +13,6 @@ public class Signup_Controller{
 	private Signup_UserRepository userRepository;
 	  @PostMapping("/signup")					//this is the file that attached to my html loginpage from(post) it had form(l eg-    <form action="http://localhost:8090/login" method="post">
 	  public String signup(@RequestParam String first_name, @RequestParam String last_name , @RequestParam String email, @RequestParam String ph_number, @RequestParam String address, @RequestParam String password){
-//			int result =0;
 
 		  String role="Costumer";
 		  

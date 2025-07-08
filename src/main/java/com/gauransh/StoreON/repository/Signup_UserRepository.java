@@ -17,5 +17,4 @@ public interface Signup_UserRepository extends JpaRepository<Signup_User,String>
 }
 
 
-
 //@Param is used since this si for sql thus we don't use @ReqParam

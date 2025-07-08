@@ -438,8 +438,8 @@ img {
 
 #cart_table th {
   background-color: #f08804;
-  color: white;
-  font-size: 18px;
+  color: #fefae0;
+  font-size: 30px;
 }
 
 .cart-thumbnail {
@@ -476,8 +476,9 @@ img {
 td{
 	font-size: 30px;
 }
-
-
+th{
+	font-size: 30px;
+}
 #log_out_button{
 	background-color: black;
 	color:  #C7AE6A;
