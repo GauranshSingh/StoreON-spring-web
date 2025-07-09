@@ -449,9 +449,9 @@ img {
 
 #product_image{
 	justify-content: center;
-	margin-left: 100px;
-	height: 160px;
-	width: 160px;
+	margin: 0 auto;
+	height: 220px;
+	width: 220px;
 }
 
 .foot_panel1{
@@ -489,3 +489,11 @@ th{
 	margin-top:0px;
 	border-radius: 5%;
 }
+
+#Delete_button_Cart{
+	border-radius: 50%;
+	height:70px;
+	width:70px;
+	margin:0 auto;
+}
+

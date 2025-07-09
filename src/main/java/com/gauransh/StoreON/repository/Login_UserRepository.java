@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;  // to get teh jpa
 import org.springframework.stereotype.Repository;				//
 
 @Repository
-public interface Login_UserRepository extends JpaRepository<Login_User, String> {		// function for SQL JPa is predifined 
+public interface Login_UserRepository extends JpaRepository<Login_User, Integer> {		// function for SQL JPa is predifined 
     Login_User findByEmail(String email);            // for this-SELECT email,password FROM user_table WHERE email = gauranshsinghse@gmailcom;
     
 }

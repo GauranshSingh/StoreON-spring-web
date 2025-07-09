@@ -13,7 +13,7 @@
     </header>
     <main id="purple_this">
 
-      <img id="image" th:src="'Images/Phones_images/'+ ${product.imageUrl}" alt="Product image" style=" margin-bottom:200px;">
+      <img id="image" th:src="'Images/Phones_images/'+ ${product.ImageUrl}" alt="Product image" style=" margin-bottom:200px;">
 
 	    <div id="right_side">
 	              
@@ -34,7 +34,7 @@
 	                  <s id="old_price" th:text="'$' + ${product.oldPrice}">$1500</s>
 	                  <h1 th:text="'$' + ${product.newPrice}">$1000</h1>
 	              </div>
-	              <form th:action="@{/MyCart}" method="post" >
+	              <form th:action="@{/Cart}" method="post" >
 					<input type="hidden" name="productId" th:value="${product.productId}" />
 				  <button type="submit" id="buy_now" onclick="changeText(this)">Add to Cart</button>
 				  </form>
@@ -89,6 +89,5 @@
 			    }, 50);
 			    return true; // allow form to submit
 			}
-
 </script>
 </html>

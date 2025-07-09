@@ -1,17 +1,12 @@
 package com.gauransh.StoreON.repository;
 
-import com.gauransh.StoreON.entity.ProductDetails;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Modifying;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
 
-import jakarta.transaction.Transactional;
+import com.gauransh.StoreON.entity.Cart;
+import java.util.List;
 
-public interface MyCartRepository extends JpaRepository<ProductDetails, Integer>{
-	
-    @Modifying
-    @Transactional
-    @Query(value = "INSERT INTO cart(user_id, product_id) VALUES (:user_id, :productId)", nativeQuery = true)
-    void getProductId(@Param("user_id") Integer user_id, @Param("productId") Integer productID);
+
+public interface MyCartRepository extends JpaRepository<Cart, Integer>{
+    List<Cart> findByUserId(Integer userId);
+    
 }

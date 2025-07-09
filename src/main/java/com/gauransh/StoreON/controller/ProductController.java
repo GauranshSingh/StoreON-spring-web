@@ -28,6 +28,7 @@ public class ProductController {
 		product.setHighlights(					// added to get HIghlights in different lines
 				product.getHighlights().replace("\n","<br>")
 				);
+		System.out.println("Saving to cart: userId = " + loggedInUser + ", productId = " + productId);
 		return "product";
 	}
 }
