@@ -263,6 +263,7 @@ h3{
 #Assured{
     color:#fefae0;
     font-size: 35px;
+	margin-left: 0px;
 }
 
 
@@ -278,13 +279,14 @@ h3{
 
 #rating{
     font-size: 60px;
+	margin-left: 0px;
 }
 
 
 #old_price{
 	font-size: 55px;
 	color: #f08804;
-	margin-left: 50px;
+	margin-left: 0px;
 }
 
 

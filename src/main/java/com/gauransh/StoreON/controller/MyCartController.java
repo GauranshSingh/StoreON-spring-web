@@ -1,6 +1,8 @@
 package com.gauransh.StoreON.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -31,47 +33,41 @@ public class MyCartController {
 		}
 		model.addAttribute("loggedInUser",loggedInUser);
 		
-
-		
-		
-		
 		Integer UserId=(Integer) session.getAttribute("user_id");
 		List<Cart> ProductsinCart = productdetailsrepository.findByUserId(UserId);
 		
-//		System.out.println("---- ProductsinCart ----");
-//	    for (Cart c : ProductsinCart) {
-//	        System.out.println("ProductsinCart: " + ProductsinCart);
-//	    }
-		
-		
 	
 		List<Integer> productIds = ProductsinCart.stream().map(Cart::getProductId).toList();
-		
-//		System.out.println("---- productIds ----");
-//	    for (Cart c : ProductsinCart) {
-//	        System.out.println("productIds: " + productIds);
-//	    }
-		
-		
+
 		
 		List<ProductDetails> Cart_Product_Details = ProductDetailsCart.findByProductIdIn(productIds);
+		
+		
+	    Map<Integer, Integer> quantityMap = new HashMap<>();
 
-//	    System.out.println("---- Cart_Product_Details ----");
-//	    for (Cart c : ProductsinCart) {
-//	        System.out.println("Cart_Product_Details: " + Cart_Product_Details);
-//	    }
-		
+	    for (Cart c : ProductsinCart) {
+	        int productId = c.getProductId();
+	        quantityMap.put(productId, quantityMap.getOrDefault(productId, 0) + 1);
+	    }
+
+	    double overall_price =0;
+	    double overall_quantity = 0;
+	    	    	    
+	    for(ProductDetails c : Cart_Product_Details) {
+	    	 int productId = c.getProductId();
+	    	 int quantity = quantityMap.getOrDefault(productId, 0); // get quantity from map 
+	    	 overall_quantity=overall_quantity+quantity;
+	    	 overall_price = overall_price + c.getNewPrice()*quantity;
+	    }
 	    
-	    
-		
 	    model.addAttribute("cartProducts", Cart_Product_Details);
-
-//	    System.out.println("---- CART ITEMS ----");
-//	    for (Cart c : ProductsinCart) {
-//	        System.out.println("User ID: " + c.getUserId() + ", Product ID: " + c.getProductId());
-//	    }
-
+	      
+	    model.addAttribute("quantityMap", quantityMap);  
+			    
+	    model.addAttribute("overall_price",overall_price);
 	    
+	    model.addAttribute("overall_quantity",overall_quantity);
+
 	    
 		return "MyCart";
 	}

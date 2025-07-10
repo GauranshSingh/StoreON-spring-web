@@ -10,44 +10,66 @@
 	<header>
 	<div th:replace="fragments/header :: header(${loggedInUser})"></div>
 	</header>
-
   <div id="body">
     <br />
     <div id="grey_box">
       <h1 id="Login_text">My Cart</h1>
-   
     <div id="cart_container">
       <table id="cart_table">
         <thead>
           <tr>
-            <th>Image</th>
+            <th>Product</th>
             <th>Name</th>
             <th>Rating</th>
             <th>Old Price</th>
             <th>New Price</th>
-			<th>Delete</th>
+			<th>Quantity</th>
+			<th style="width:150px;">Add</th>
+			<th style="width:100px;">Remove</th>
           </tr>
         </thead>
         <tbody>
 			<tr th:each="ProductDetails : ${cartProducts}">
-			  <td>
-			    <img id="product_image"
-			         th:src="@{'/Images/Phones_images/' + ${ProductDetails.imageUrl}}"
-			         alt="Product Image" />
-			  </td>
-			  <td th:text="${ProductDetails.name}">name</td>
+				<td>
+				  <a th:href="@{/product(productId=${ProductDetails.productId})}">
+				    <img id="product_image"
+				         th:src="@{'/Images/Phones_images/' + ${ProductDetails.imageUrl}}"
+				         alt="Product Image"
+				         style="cursor: pointer;" />
+				  </a>
+				</td>
+				<td>
+				<a id="Same" th:text="${ProductDetails.name}" th:href="@{/product(productId=${ProductDetails.productId})}">name</a>
+				</td>
 			  <td th:text="${ProductDetails.rating}">★★★★☆</td>
 			  <td th:text="${ProductDetails.oldPrice}"><s>$350.00</s></td>
 			  <td th:text="${ProductDetails.newPrice}">$299.00</td>
-			  <td>
-			    <form th:action="@{/DeleteCart}" method="get">
-			      <input type="hidden" name="productId" th:value="${ProductDetails.productId}" />
-				  <img id="Delete_button_Cart" src="Images/Delete_button_Cart.jpg" alt="Delete" style="cursor:pointer;">
-			    </form>
-			  </td>
-			</tr>		
+			  <td th:text="${quantityMap[ProductDetails.productId]}">1</td>
+			  <td> 
+			  	  <form th:action="@{/Add2Cart}" method="post">
+			  	   <input type="hidden" name="productId" th:value="${ProductDetails.productId}" />
+			  		<button type="submit" style="background: none;border: none;color: white;cursor: pointer;font-size: 60px;padding: 4px 8px;">
+				   +</button>
+			  		</form>
+			  	</td>
+
+				<td> 
+				  <form th:action="@{/DeleteCart}" method="get">
+				    <input type="hidden" name="productId" th:value="${ProductDetails.productId}" />
+				  <button type="submit"style="background: none;border: none;color: white;cursor: pointer;font-size: 60px;padding: 4px 8px;">-</button>
+				  </form>
+				</td>
+			</tr>	
+
         </tbody>
       </table>
+	  <p id="add_products_mssg" >Add products to cart  <button id="add_button" onclick="window.location.href='http://localhost:8090/Webpage'" type="submit" >Add</button></p>
+	  
+	  <p id="total_price" th:text="@{'Total Price = $'+ ${overall_price}}">totalPrice =</p>
+	  
+	  <p id="total_price" th:text="@{'Total Quantity = '+ ${overall_quantity}}">overall_quantity =</p>
+
+	  <button id="payment_options" onclick="window.location.href='http://localhost:8090/Webpage'" type="submit" >Payment methods</button>
     </div>
   </div>
   </div>

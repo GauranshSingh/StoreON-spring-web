@@ -245,6 +245,7 @@ img {
 #grey_box{
     width: 2050px;
     border-radius: 2%;
+	min-height:1000px;
     height:auto;
     margin-top: auto;
     margin-bottom: 100px;
@@ -496,4 +497,52 @@ th{
 	width:70px;
 	margin:0 auto;
 }
+#add_products_mssg{
+	margin-left :750px;
+	margin-top: 30px;
+	color: #fefae0;
+	font-size: 35px;
+}
 
+#add_button{
+	background-color: #f08804;
+	color:#181818;
+	height:44px;
+	width: 100px;
+	border-radius: 10%;
+	font-size: 35px;
+	margin-top:5px;
+	margin-left:8px;
+	cursor:pointer;
+}
+td:hover{
+	color:#f08804;
+	cursor: pointer;
+	transition: transform 1.5s ease;
+}
+#Same{
+	color:#fefae0;
+	padding: 12px;
+	text-align: center;
+}
+#Same:hover{
+	color:#f08804;
+	cursor: pointer;
+	transition: transform 1.5s ease;
+}
+
+#total_price{
+	margin-left:1500px;
+	font-size: 35px;
+}
+#payment_options{
+	margin-left:1500px;
+	width:350px;
+	height:55px;
+	margin-top: 30px;
+	color: #181818;
+	background-color: #f08804;
+	font-size: 40px;
+	cursor: pointer;
+	border-radius:5%;
+}

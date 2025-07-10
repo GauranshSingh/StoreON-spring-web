@@ -13,5 +13,5 @@ public interface CartRepository extends JpaRepository<ProductDetails, Integer>{
     @Modifying
     @Transactional
     @Query(value = "INSERT INTO cart(user_id, product_id) VALUES (:user_id, :productId)", nativeQuery = true)
-    void getProductId(@Param("user_id") Integer user_id, @Param("productId") Integer productID);
+    void AddintoCart(@Param("user_id") Integer user_id, @Param("productId") Integer productID);
 }

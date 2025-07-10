@@ -9,12 +9,12 @@ import com.gauransh.StoreON.repository.CartRepository;
 import jakarta.servlet.http.HttpSession;
 
 @Controller
-public class CartController {
+public class Add2CartController {
 	
 	@Autowired
 	private CartRepository CartProduct;
 	
-	@PostMapping("/Cart")
+	@PostMapping("/Add2Cart")
 	public String getdata(HttpSession session, Model model,@RequestParam Integer productId){
 		String loggedInUser =(String) session.getAttribute("loggedInUser");
 		if(loggedInUser==null) {
@@ -25,6 +25,7 @@ public class CartController {
 		
 		CartProduct.AddintoCart(user_id,productId);
 
-		return "redirect:/product?productId=" + productId + "&added=true";
+		return "redirect:/MyCart";
 	}
 }
+
