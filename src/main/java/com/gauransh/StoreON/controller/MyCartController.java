@@ -32,11 +32,15 @@ public class MyCartController {
 		}
 		model.addAttribute("loggedInUser",loggedInUser);
 		
+		
+		
 		Integer UserId=(Integer) session.getAttribute("user_id");
+		
+		
 		List<Cart> ProductsinCart = productdetailsrepository.findByUserId(UserId);
 		
 	
-		List<Integer> productIds = ProductsinCart.stream().map(Cart::getProductId).toList();
+		List<Integer> productIds = ProductsinCart.stream().map(Cart::getProductId).toList(); 
 		
 		
 		if(productIds.isEmpty()) {
@@ -50,10 +54,12 @@ public class MyCartController {
 		
 	    Map<Integer, Integer> quantityMap = new HashMap<>();
 
+	    
 	    for (Cart c : ProductsinCart) {
 	        int productId = c.getProductId();
 	        quantityMap.put(productId, quantityMap.getOrDefault(productId, 0) + 1);
 	    }
+	    
 
 	    double overall_price =0;
 	    int overall_quantity = 0;
@@ -63,7 +69,6 @@ public class MyCartController {
 	    	 int quantity = quantityMap.getOrDefault(productId, 0); // get quantity from map 
 	    	 overall_quantity=overall_quantity+quantity;
 	    	 overall_price = overall_price + c.getNewPrice()*quantity;
-
 	    }
 	    
 	    model.addAttribute("cartProducts", Cart_Product_Details);

@@ -46,7 +46,7 @@ public class Order_bookedController {
 		List<Cart> ProductsinCart = productdetailsrepository.findByUserId(UserId);
 		
 	
-		List<Integer> productIds = ProductsinCart.stream().map(Cart::getProductId).toList();
+		List<Integer> productIds = ProductsinCart.stream().map(Cart::getProductId).toList();		// to get teh product id
 
 		
 		List<ProductDetails> Cart_Product_Details = ProductDetailsCart.findByProductIdIn(productIds);

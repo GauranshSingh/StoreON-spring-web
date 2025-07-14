@@ -28,8 +28,12 @@ public class list_2{
 	@Column(name="price")
 	private BigDecimal Price;
 	
-	public void setProductId(String Name) {
+	public void setName(String Name) {
 		this.Name=Name;
+	}
+	
+	public String getName() {
+		return Name;
 	}
 	
     public Integer getProductId() {
@@ -39,10 +43,6 @@ public class list_2{
     public void setProductId(Integer productId) {
         this.productId = productId;
     }
-	
-	public String getName() {
-		return Name;
-	}
 	
 	public void setCategory(String Category) {
 		this.Category=Category;

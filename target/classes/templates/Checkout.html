@@ -34,7 +34,6 @@
             <th>Rating</th>
             <th>Price</th>
 			<th>Quantity</th>
-
           </tr>
         </thead>
         <tbody>
@@ -42,7 +41,7 @@
 				<td>
 				  <a>
 				    <img id="product_image"
-				         th:src="@{'/Images/Phones_images/' + ${ProductDetails.imageUrl}}"
+				         th:src="@{'/Images/' + ${ProductDetails.imageUrl}}"
 				         alt="Product Image"
 				         style="cursor: pointer;" />
 				  </a>

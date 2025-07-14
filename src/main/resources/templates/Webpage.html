@@ -18,16 +18,21 @@
                      class="image-card" 
                      th:each="user : ${users}" 
                      onclick="window.location.href='List';">
+					 <form th:action="@{/List}" method="get" style="display: inline;">
+					 <input type="hidden" th:value="${user.category}" name="category">
+					 <button type="submit" style="all:unset;cursor:pointer;">
                     <img th:src="@{'/images/' + ${user.category_images}}"
-                         style="width: 90%; height: 90%; object-fit: cover; margin-top:28px;" /> 
+                         style="width: 385px; height: 475px; object-fit: cover; margin-top:28px;" /> 
                     <div class="hover-text">
                         <div th:text="${user.category}">category</div>
                         <hr style="border: 2px solid white; width: 320px; margin: 8px;">
                         <div th:text="'Starting at Rupees ' + ${user.range}">range</div>
+						</button>
+						</form>
                     </div>
+					
                 </div>
             </div>
-        </div>
     </main>
 	<div class="foot_panel1"><button id="to_top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">
 	  Back to Top

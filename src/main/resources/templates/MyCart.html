@@ -33,7 +33,7 @@
 				<td>
 				  <a th:href="@{/product(productId=${ProductDetails.productId})}">
 				    <img id="product_image"
-				         th:src="@{'/Images/Phones_images/' + ${ProductDetails.imageUrl}}"
+				         th:src="@{'/Images/' + ${ProductDetails.imageUrl}}"
 				         alt="Product Image"
 				         style="cursor: pointer;" />
 				  </a>
@@ -53,7 +53,7 @@
 				   +</button>
 			  		</form>
 					</div>
-				<div th:if="${quantityMap[ProductDetails.productId]>=ProductDetails.quantity}">
+				<div th:if="ProductDetails.quantity<=${quantityMap[ProductDetails.productId]}">
 					<button type="submit" style="background: none;border: none;color: white;cursor: pointer;font-size: 30px;padding: 4px 8px;">
 					Unavailable above <span th:text="${ProductDetails.quantity}">quantity</span></button>
 				</div>
