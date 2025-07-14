@@ -35,15 +35,15 @@ public class Signup_User{
 	return user_id;
 	}
 	
-	public void setuser_id(String user_id) {
+	public void setUser_id(String user_id) {
 	this.user_id=user_id;
 	}
 	
-	public String getfirst_name() {
+	public String getFirst_name() {
 		return first_name;
 	}
 	
-	public void setfirst_name(String first_name) {
+	public void setFirst_name(String first_name) {
 		this.first_name = first_name;
 	}
 	
@@ -51,23 +51,23 @@ public class Signup_User{
 		return last_name;
 	}
 	
-	public void setlast_name(String last_name) {
+	public void setLast_name(String last_name) {
 		this.last_name=last_name;
 	}
 	
-	public String getph_number() {
+	public String getPh_number() {
 		return ph_number;
 	}
 	
-	public void setph_number(String ph_number) {
+	public void setPh_number(String ph_number) {
 		this.ph_number = ph_number;
 	}
 	
-	public String get_address() {
+	public String get_Pddress() {
 		return address;
 	}
 	
-	public void set_address(String address) {
+	public void set_Pddress(String address) {
 		this.address= address;
 	}
 	
@@ -79,11 +79,11 @@ public class Signup_User{
 		this.Email = Email;
 	}
 	
-	public String getpassword() {
+	public String getPassword() {
 		return password;
 	}
 	
-	public void setpassword(String password) {
+	public void setPassword(String password) {
 		this.password = password;
 	}
 

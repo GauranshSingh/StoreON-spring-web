@@ -13,7 +13,6 @@ import com.gauransh.StoreON.entity.Cart;
 import com.gauransh.StoreON.entity.ProductDetails;
 import com.gauransh.StoreON.repository.MyCartRepository;
 import com.gauransh.StoreON.repository.Product_details_ListRepository;
-
 import jakarta.servlet.http.HttpSession;
 
 @Controller
@@ -38,6 +37,12 @@ public class MyCartController {
 		
 	
 		List<Integer> productIds = ProductsinCart.stream().map(Cart::getProductId).toList();
+		
+		
+		if(productIds.isEmpty()) {
+			return "empty_cart";
+			
+		}
 
 		
 		List<ProductDetails> Cart_Product_Details = ProductDetailsCart.findByProductIdIn(productIds);
@@ -51,13 +56,14 @@ public class MyCartController {
 	    }
 
 	    double overall_price =0;
-	    double overall_quantity = 0;
+	    int overall_quantity = 0;
 	    	    	    
 	    for(ProductDetails c : Cart_Product_Details) {
 	    	 int productId = c.getProductId();
 	    	 int quantity = quantityMap.getOrDefault(productId, 0); // get quantity from map 
 	    	 overall_quantity=overall_quantity+quantity;
 	    	 overall_price = overall_price + c.getNewPrice()*quantity;
+
 	    }
 	    
 	    model.addAttribute("cartProducts", Cart_Product_Details);
@@ -68,7 +74,7 @@ public class MyCartController {
 	    
 	    model.addAttribute("overall_quantity",overall_quantity);
 
-	    
 		return "MyCart";
+		
 	}
 }

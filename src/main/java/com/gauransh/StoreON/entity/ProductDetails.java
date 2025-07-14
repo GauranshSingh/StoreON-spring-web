@@ -36,6 +36,9 @@ public class ProductDetails {
 
     @Column(name = "description")
     private String description;
+    
+    @Column(name = "quantity")
+    private Integer quantity;
 
     public Integer getProductId() {
         return productId;
@@ -107,6 +110,14 @@ public class ProductDetails {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+    
+    public Integer getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
     }
 }
 

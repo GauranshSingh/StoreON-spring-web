@@ -22,15 +22,13 @@ public class ProductController {
 		if(loggedInUser==null) {
 			return"redirect:/login_page.html"; 
 		}
-		
-		
-		
+
 		ProductDetails product = productdetailsrepository.findByProductId(productId);
 		model.addAttribute("product",product);
+		
 		product.setHighlights(					// added to get info in different lines
 				product.getHighlights().replace("\n","<br>")
 				);
-		
 		
 			return "product";
 	}

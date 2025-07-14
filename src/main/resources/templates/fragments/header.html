@@ -15,7 +15,10 @@
             <a id="Account" href="...">Account</a>
 			<p id="Welcome">Welcome Back!</p><br><br>
 			    <span id="New_releases" th:text="${loggedInUser}">Firstname</span>
-				<img src="images/edit_image_2.png" id="edit_image">
+				<a th:href="@{/Edit_Profile.html}">
+				    <img style="cursor:pointer;" src="images/edit_image_2.png" id="edit_image" alt="Edit Profile">
+				</a>
+
 			</div>
         	<div id="sub_navbar">				
 		<a  th:href="@{/MyCart}" id="My_Cart"onclick="window.location.href='MyCart';" style="cursor: pointer; " >My Cart</a>

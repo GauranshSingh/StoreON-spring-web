@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Cart</title>
+  <link rel="stylesheet" href="Checkout.css" />
+</head>
+<body>
+	<header>
+	<div th:replace="fragments/header :: header(${loggedInUser})"></div>
+	</header>
+	
+	<main>
+  <div id="body">
+    <br />
+    <div id="grey_box">
+      <h1 id="Login_text">Ordered Successfully!</h1>
+	  
+	  <a id="total_price" style="margin-left:100px;">Customer Name : </a>
+	  <a id="orange" th:text="@{${loggedInUser}}" >Name</a>
+	  
+	  <p id="total_price" style="margin-left:100px;" th:text="@{'Amount paid = $'+ ${overall_price}}">totalPrice =</p>
+	  	  
+	  <a id="total_price" style="margin-left:100px;">Expeted Delivery: </a><a id="orange"> Within 3 days</a>
+
+	  
+    <div id="cart_container">
+      <table id="cart_table">
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Name</th>
+            <th>Rating</th>
+            <th>Price</th>
+			<th>Quantity</th>
+
+          </tr>
+        </thead>
+        <tbody>
+			<tr th:each="ProductDetails : ${cartProducts}">
+				<td>
+				  <a>
+				    <img id="product_image"
+				         th:src="@{'/Images/Phones_images/' + ${ProductDetails.imageUrl}}"
+				         alt="Product Image"
+				         style="cursor: pointer;" />
+				  </a>
+				</td>
+				<td>
+				<a id="Same" th:text="${ProductDetails.name}">name</a>
+				</td>
+			  <td th:text="${ProductDetails.rating}">★★★★☆</td>
+			  <td th:text="${ProductDetails.newPrice}">$299.00</td>
+			  <td th:text="${quantityMap[ProductDetails.productId]}">1</td>
+
+			</tr>	
+
+        </tbody>
+      </table>
+	  <br>
+	  
+	  <p id="total_price" th:text="@{'Number of products = '+ ${overall_quantity}}">overall_quantity =</p>
+	  
+	<br>
+	<a id="total_price">Order ID: </a><a id="orange"> 78382(S)</a>
+
+    </div>
+  </div>
+  </div>
+  </main>
+          <footer id="footer">
+  			<div class="foot_panel1"><button id="to_top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">
+  					  		  	  Back to Top
+  					  		  	</button></div>
+  			<object type="text/html" data="footer.html" width="100%" height="540px" style="border: none;"></object>
+  </footer>
+
+  </body>
+  <script>
+  	window.addEventListener("pageshow", function (event) {
+  	    if (event.persisted) {
+  	        window.location.reload();
+  	    } 
+  	});
+  </script>
+</html>

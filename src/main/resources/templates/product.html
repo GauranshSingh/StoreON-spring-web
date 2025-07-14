@@ -34,10 +34,15 @@
 	                  <s id="old_price" th:text="'$' + ${product.oldPrice}">$1500</s>
 	                  <h1 th:text="'$' + ${product.newPrice}">$1000</h1>
 	              </div>
+				  <div th:if="${product.quantity>0}">
 	              <form th:action="@{/Cart}" method="post" >
 					<input type="hidden" name="productId" th:value="${product.productId}" />
 				  <button type="submit" id="buy_now" onclick="changeText(this)">Add to Cart</button>
 				  </form>
+				  </div>
+				  <div th:if="${product.quantity == 0}">
+				      <button id="buy_now" style="background-color: grey;" class="disabled-btn" disabled>Out of Stock!</button>
+				  </div>
 	              <br>
 	              <h3>Available offers:</h3>
 	              <br>

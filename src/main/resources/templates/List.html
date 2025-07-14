@@ -16,7 +16,7 @@
 		<div id="row_1">
 		  <div th:each="Product : ${products}"
 		       class="image-card">
-		    <img class="photo_2" th:src="@{'/images/Phones_images/' + ${Product.Image}}" alt="Product Image">
+		    <img class="photo_2" th:src="@{'/images/' + ${Product.Image}}" alt="Product Image">
 		    <div id="text_2">
 		      <div class="container">
 		        <h3 th:text="${Product.Name}">Name</h3><br>

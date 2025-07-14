@@ -24,6 +24,8 @@ public class Add2CartController {
 		Integer user_id =(Integer) session.getAttribute("user_id");
 		
 		CartProduct.AddintoCart(user_id,productId);
+		
+		
 
 		return "redirect:/MyCart";
 	}

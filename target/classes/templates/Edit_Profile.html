@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Signup_Storeon.css">
+</head>	
+<body>
+    <header>
+        <div id="navbar">
+        </div>
+    </header>
+        <div id="body">
+            <img id="logo" src="images/Storeon_logo_trial_4.png" alt="">
+            <br>
+        <div id="grey_box">
+          <h1 id="Login_text">Edit Profile</h1>
+<form th:action="@{/Edit_profile}" method="post">
+  <div id="first_row" style="display: flex;">
+    <input th:value="${user.firstName}" id="firstName" class="text_input" type="text" name="first_name" placeholder="Enter First name" required>
+    <input th:value="${user.lastName}" id="lastName" class="text_input" type="text" name="last_name" placeholder="Enter Last name" required>
+  </div><br><br>
+  <div id="second_row" style="display: flex;">
+    <input th:value="${user.getPhnumber}" id="ph_number" class="text_input" type="text" name="ph_number" placeholder="Enter phone number" required maxlength="10">
+    <input th:value="${user.Address}" id="address" class="text_input" type="text" name="address" placeholder="Enter Address" required>
+  </div><br><br>
+  <div id="third_row" style="display: flex;">
+    <input th:value="${user.email}" id="Email_address" class="text_input" type="email" name="email" placeholder="Enter Email address" required>
+    <input id="password" class="text_input" type="password" name="password" placeholder="Enter New password" required>
+  </div><br><br>
+  <button  type="submit" style="cursor: pointer;" class="button" id="Sign_in">Update Information</button>
+</form>
+        </div>
+        </div>
+    </body>
+</html>

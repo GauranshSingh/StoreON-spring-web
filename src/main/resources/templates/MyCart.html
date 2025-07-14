@@ -46,11 +46,17 @@
 			  <td th:text="${ProductDetails.newPrice}">$299.00</td>
 			  <td th:text="${quantityMap[ProductDetails.productId]}">1</td>
 			  <td> 
+				<div th:if="${ProductDetails.quantity>quantityMap[ProductDetails.productId]}">
 			  	  <form th:action="@{/Add2Cart}" method="post">
 			  	   <input type="hidden" name="productId" th:value="${ProductDetails.productId}" />
 			  		<button type="submit" style="background: none;border: none;color: white;cursor: pointer;font-size: 60px;padding: 4px 8px;">
 				   +</button>
 			  		</form>
+					</div>
+				<div th:if="${quantityMap[ProductDetails.productId]>=ProductDetails.quantity}">
+					<button type="submit" style="background: none;border: none;color: white;cursor: pointer;font-size: 30px;padding: 4px 8px;">
+					Unavailable above <span th:text="${ProductDetails.quantity}">quantity</span></button>
+				</div>
 			  	</td>
 
 				<td> 
@@ -63,14 +69,18 @@
 
         </tbody>
       </table>
-	  <p id="add_products_mssg" >Add products to cart  <button id="add_button" onclick="window.location.href='http://localhost:8090/Webpage'" type="submit" >Add</button></p>
+	  <p style="margin-left:670px; font-size:38px;" id="add_products_mssg" >Add more products to cart:<button id="add_button" onclick="window.location.href='http://localhost:8090/Webpage'" type="submit" >Add</button></p>
 	  
 	  <p id="total_price" th:text="@{'Total Price = $'+ ${overall_price}}">totalPrice =</p>
 	  
 	  <p id="total_price" th:text="@{'Total Quantity = '+ ${overall_quantity}}">overall_quantity =</p>
+  
+	  <form th:action="@{/Order}" method="post">
+	  	<input type="hidden" name="productId"  />
+	  <button id="payment_options" type="submit" >Purchase</button>
+	  </form>   
 
-	  <button id="payment_options" onclick="window.location.href='http://localhost:8090/Webpage'" type="submit" >Payment methods</button>
-    </div>
+  </div>
   </div>
   </div>
           <footer id="footer">
