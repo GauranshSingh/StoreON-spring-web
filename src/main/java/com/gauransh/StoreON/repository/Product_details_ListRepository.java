@@ -8,4 +8,5 @@ import com.gauransh.StoreON.entity.ProductDetails;
 
 public interface Product_details_ListRepository extends JpaRepository<ProductDetails, Integer>{
 	List<ProductDetails> findByProductIdIn(List<Integer> productId );
+	ProductDetails findByProductId(Integer productId);
 }

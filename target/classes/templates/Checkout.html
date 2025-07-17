@@ -20,7 +20,7 @@
 	  <a id="total_price" style="margin-left:100px;">Customer Name : </a>
 	  <a id="orange" th:text="@{${loggedInUser}}" >Name</a>
 	  
-	  <p id="total_price" style="margin-left:100px;" th:text="@{'Amount paid = $'+ ${overall_price}}">totalPrice =</p>
+	  <p id="total_price" style="margin-left:100px;" th:text="@{'Amount to be paid = $'+ ${overall_price}}">totalPrice =</p>
 	  	  
 	  <a id="total_price" style="margin-left:100px;">Expeted Delivery: </a><a id="orange"> Within 3 days</a>
 
@@ -63,6 +63,10 @@
 	  
 	<br>
 	<a id="total_price">Order ID: </a><a id="orange"> 78382(S)</a>
+	
+	<a th:href="@{/download-bill(name=${loggedInUser}, total=${overall_price}, quantity=${overall_quantity}, orderId='78382(S)')}">
+		<button id="payment_options">Download Bill</button>
+	</a>
 
     </div>
   </div>

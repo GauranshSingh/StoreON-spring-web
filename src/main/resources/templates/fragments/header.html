@@ -9,23 +9,34 @@
 <body>
 	<div th:fragment="header(loggedInUser)">
 <div id="navbar">
-            <img style="cursor:pointer;" onclick="window.location.href='http://localhost:8090/Webpage'" src="images/Storeon_logo_trial_4.png" id="logo" alt="StoreOn Logo">
-            <input style="color:black;" type="text" id="text" placeholder="Search StoreOn.in">
-            <button id="button" onclick="alert('You clicked Search!')">Search</button>
+            <img style="cursor:pointer; margin-left:80px;" onclick="window.location.href='http://localhost:8090/Webpage'" src="images/Storeon_logo_trial_4.png" id="logo" alt="StoreOn Logo">
+			<form th:action="@{/Search}" method="get">
+			    <input style="color:black; font-size:27px;" type="text" id="text" name="name" placeholder="Search StoreOn.in">
+			    <button type="submit" id="button">Search</button>
+			</form>
+
             <a id="Account" href="...">Account</a>
 			<p id="Welcome">Welcome Back!</p><br><br>
 			    <span id="New_releases" th:text="${loggedInUser}">Firstname</span>
 				<a th:href="@{/Edit_Profile.html}">
 				    <img style="cursor:pointer;" src="images/edit_image_2.png" id="edit_image" alt="Edit Profile">
 				</a>
-
 			</div>
         	<div id="sub_navbar">				
-		<a  th:href="@{/MyCart}" id="My_Cart"onclick="window.location.href='MyCart';" style="cursor: pointer; " >My Cart</a>
-            <a id="Todays_Deal" style="margin-left:80px; color: #f08804" href="..." >Category: SmartPhones</a>
-            <a id="Customer_Service" href="..." style="margin-left:80px;">Customer Service</a>
+		<a  th:href="@{/MyCart}" id="My_Cart"onclick="window.location.href='MyCart';" style="cursor: pointer;margin-left:80px;  margin-right:60px; " >My Cart</a>
+		<form style="display:inline;" method="get" th:action="@{/List}" >		
+		<div id="Todays_Deal" style="display:inline; margin:80px; height:30px; width:120px; " >
+		<label style="margin-left: 10px;" class="form-label" >Category</label>
+		<select style="height:35px; background-color: #f08804; margin-top:7px; cursor:pointer; border-radius: 5%;font-size:20px;" onchange="this.form.submit()" name="category">
+			<option style="color: black"  id="Todays_Deal" value="-Select-" >-Select-</option>
+		  <option style="color: black; cursor: pointer;" id="Todays_Deal" value="Smartphones" >Smartphones</option>
+		  <option style="color: black" id="Todays_Deal" value="Watches" >Watches</option>
+		</select>
+		</div>  
+		</form>  
+			<a id="Customer_Service" href="..." style="margin-left:80px;">Customer Service</a>
             <a id="Sell" href="..." style="margin-left:80px;">Today's Deal</a>   
-            <a id="Resale" href="..." style="margin-left:80px;">Resale</a>
+            <a id="Resale" onclick="Window.location.href='Order_History'" th:href="@{/Order_History}" style="margin-left:80px;cursor:pointer;">Order History</a>
             <a id="Best_sellers" href="..." style="margin-left:80px;">Best sellers</a>
             <a style="font-size:40px;" id="log_out_button"  href="/logout">Logout</a>
         </div>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StoreOn Search Results</title>
+    <link rel="stylesheet" href="Search_result.css" />
+</head>
+<body>
+<header>
+    <div th:replace="fragments/header :: header(${loggedInUser})"></div>
+</header>
+
+<main id="purple_this">
+
+	<div id="left_side"></div>
+
+	
+    <div id="side">
+		<div id="search-results">
+		    <div class="product-row" th:each="product : ${products}">
+		        <div class="product-image">
+		            <img th:src="@{'/images/' + ${product.imageUrl}}" alt="Product Image">
+		        </div>
+		        <div class="product-info">
+		            <h2 th:text="${product.name}">Product Name</h2>
+		            <p class="rating" th:text="'Rating: ' + ${product.rating}">★★★★☆</p>
+		            <p class="price">
+		                <span class="old-price" th:if="${product.oldPrice != null}" th:text="'$' + ${product.oldPrice}"></span>
+		                <span class="new-price" th:text="'$' + ${product.newPrice}"></span>
+		            </p>
+		            <p class="offers" th:text="${product.offers}">Available offers...</p>
+
+		            <a th:href="@{'/product?productId=' + ${product.productId}}" class="view-button">
+		                View Product
+		            </a>
+		        </div>
+		    </div>
+		</div>
+
+    </div>
+</main>
+
+<div class="foot_panel1">
+    <button id="to_top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">
+        Back to Top
+    </button>
+</div>
+
+<footer id="footer">
+    <object type="text/html" data="footer.html" width="100%" height="540px" style="border: none;"></object>
+</footer>
+
+<script>
+window.addEventListener("pageshow", function (event) {
+    if (event.persisted) {
+        window.location.reload();
+    }
+});
+</script>
+</body>
+</html>

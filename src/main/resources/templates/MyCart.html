@@ -53,7 +53,7 @@
 				   +</button>
 			  		</form>
 					</div>
-				<div th:if="ProductDetails.quantity<=${quantityMap[ProductDetails.productId]}">
+					<div th:if="${ProductDetails.quantity <= quantityMap[ProductDetails.productId]}">
 					<button type="submit" style="background: none;border: none;color: white;cursor: pointer;font-size: 30px;padding: 4px 8px;">
 					Unavailable above <span th:text="${ProductDetails.quantity}">quantity</span></button>
 				</div>

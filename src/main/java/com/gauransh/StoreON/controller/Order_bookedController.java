@@ -11,6 +11,7 @@ import com.gauransh.StoreON.entity.Cart;
 import com.gauransh.StoreON.entity.ProductDetails;
 import com.gauransh.StoreON.repository.Empty_Cart;
 import com.gauransh.StoreON.repository.MyCartRepository;
+import com.gauransh.StoreON.repository.Order_HistoryRepository;
 import com.gauransh.StoreON.repository.Product_details_ListRepository;
 import com.gauransh.StoreON.repository.Quantity_productRepository;
 import jakarta.servlet.http.HttpSession;
@@ -31,6 +32,9 @@ public class Order_bookedController {
 	@Autowired
 	private Quantity_productRepository quantityRepo;
 	
+	@Autowired
+	private Order_HistoryRepository order_2_history;
+	
 	@Transactional
 	@PostMapping("/Order")
 	public String getproduct(Model model, HttpSession session) {
@@ -50,6 +54,7 @@ public class Order_bookedController {
 
 		
 		List<ProductDetails> Cart_Product_Details = ProductDetailsCart.findByProductIdIn(productIds);
+		
 		
 	    Map<Integer, Integer> quantityMap = new HashMap<>();
 
@@ -72,7 +77,11 @@ public class Order_bookedController {
 	    	 
 	    	 quantityRepo.Product_quantity_check(availablity,productId);
 	    }
-	    
+	    	    
+		for(int i =0;i<overall_quantity;i++) {
+			order_2_history.add_into_order(UserId,productIds.get(i));
+		}
+
 	    model.addAttribute("cartProducts", Cart_Product_Details);
 	      
 	    model.addAttribute("quantityMap", quantityMap);  
@@ -80,6 +89,7 @@ public class Order_bookedController {
 	    model.addAttribute("overall_price",overall_price);
 	   	    
 	    model.addAttribute("overall_quantity",overall_quantity);
+
 	    
 	    Product_deletion.EmptyCart(UserId);
 

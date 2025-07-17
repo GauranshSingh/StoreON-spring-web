@@ -27,7 +27,7 @@
   </div><br><br>
   <div id="third_row" style="display: flex;">
     <input th:value="${user.email}" id="Email_address" class="text_input" type="email" name="email" placeholder="Enter Email address" required>
-    <input id="password" class="text_input" type="password" name="password" placeholder="Enter New password" required>
+    <input  th:value="${user.password}" id="password" class="text_input" type="password" name="password" placeholder="Enter New password" required>
   </div><br><br>
   <button  type="submit" style="cursor: pointer;" class="button" id="Sign_in">Update Information</button>
 </form>
