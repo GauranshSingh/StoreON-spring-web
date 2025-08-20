@@ -3,7 +3,7 @@
 
 package com.gauransh.StoreON;     //tells where class is located
 
-import org.springframework.boot.SpringApplication;  
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;     //these are teh libraries user to import the @SpringBootApplication
 
 //import com.gauransh.loginapp.controller.LoginController;

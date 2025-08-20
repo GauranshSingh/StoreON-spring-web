@@ -2,13 +2,16 @@
 
 package com.gauransh.StoreON.controller;//again tells where is class 
 
-import com.gauransh.StoreON.entity.Login_User;
-import com.gauransh.StoreON.repository.Login_UserRepository;				// to get user repository function access
-import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;      // to get auto wired function access
-import org.springframework.web.bind.annotation.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.gauransh.StoreON.entity.Login_User;
+import com.gauransh.StoreON.repository.Login_UserRepository;				// to get user repository function access
+
+import jakarta.servlet.http.HttpSession;
 
 // I used autowired and controllwe so it can handle the http ...(saturday gone)
 @Controller							
@@ -21,6 +24,7 @@ public class LoginController {
         Login_User user = userRepository.findByEmail(email);		// finds the user
         if (user != null && user.getPassword().equals(password)) {
         	session.setAttribute("loggedInUser",user.getFirstName());
+        	session.setAttribute("user_lastname", user.getLastName());
         	session.setAttribute("user_id",user.getUserId());
         	session.setAttribute("user", user);
 //        	String loggedInUser = session.getAttribute("loggedInUser"); //should i save this in entity

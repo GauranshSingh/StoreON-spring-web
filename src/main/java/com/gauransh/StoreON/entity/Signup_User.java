@@ -1,14 +1,18 @@
 package com.gauransh.StoreON.entity;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "user_table")
 
 public class Signup_User{
+	
 	@Id
 	@Column(name="user_id")
-	private String user_id;
+	private Integer user_id;
 	
 	@Column(name = "first_name")
 	private String first_name;
@@ -31,11 +35,11 @@ public class Signup_User{
 	@Column(name="role")
 	private String role;
 
-	public String getUser_id() {     // we will get first then set 
+	public Integer getUser_id() {     // we will get first then set 
 	return user_id;
 	}
 	
-	public void setUser_id(String user_id) {
+	public void setUser_id(Integer user_id) {
 	this.user_id=user_id;
 	}
 	

@@ -1,9 +1,10 @@
 package com.gauransh.StoreON.util;
 
 import java.io.IOException;
+
 import org.json.JSONObject;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
+
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -13,45 +14,36 @@ import okhttp3.Response;
 @Component
 public class GroqApiClient {
 
-    @Value("${groq.api.key}")
-    private String apiKey;
+    // The API key is no longer needed here as it's handled by the Python script
+    // @Value("${groq.api.key}")
+    // private String apiKey;
 
     public String getReply(String userMessage) throws IOException {
         OkHttpClient client = new OkHttpClient();
 
-        String json = """
-        {
-          "model": "llama3-8b-8192",
-          "messages": [
-            {
-              "role": "system",
-              "content": "you are StoreOn's AI Assistant, here to help users with e-commerce queries. Be helpful and concise. the year is 2025, and accordingly phones have been released like iphone 16 and stuff also the price on storeon website is the same as on the net so reply for price and discription accrodingly"
-            },
-            {
-              "role": "user",
-              "content": "%s"
-            }
-          ]
-        }
-        """.formatted(userMessage);
+        // 1. Create a simpler JSON payload for our Python API
+        JSONObject jsonPayload = new JSONObject();
+        jsonPayload.put("message", userMessage);
+        String json = jsonPayload.toString();
+
+        // 2. Change the URL to point to our local Python API
+        String pythonApiUrl = "http://localhost:5000/ask";
 
         Request request = new Request.Builder()
-                .url("https://api.groq.com/openai/v1/chat/completions")		//url of groq
-                 .header("Authorization", "Bearer "+ apiKey)	// it is to send api key and header
+                .url(pythonApiUrl)
                 .header("Content-Type", "application/json")
-               .post(RequestBody.create(json, MediaType.get("application/json")))		//post method for json 
+                .post(RequestBody.create(json, MediaType.get("application/json")))
                 .build();
 
-        try (Response response = client.newCall(request).execute()) {       // 
+        try (Response response = client.newCall(request).execute()) {
             if (!response.isSuccessful()) {
-                throw new RuntimeException("Unexpected code: " + response);		// to handle error
+                // Provide a more specific error if the Python API isn't running
+                throw new RuntimeException("Failed to connect to the Python bot API. Is the api.py script running? Response: " + response);
             }
             
+            // 3. Parse the simpler response from our Python API
             return new JSONObject(response.body().string())
-                     .getJSONArray("choices")		// array of only one choice
-                     .getJSONObject(0)				// object inside the choices array(since there is only 2 object)
-                    .getJSONObject("message")		// message like iphone 16 price?
-                    .getString("content");			// and of the price
+                     .getString("reply");
         }
     }
 }

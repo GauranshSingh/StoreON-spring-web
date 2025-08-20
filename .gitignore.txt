@@ -1,0 +1,16 @@
+# Java / Maven
+target/
+*.class
+*.log
+.settings/
+.project
+.classpath
+
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/
+
+# Secrets - VERY IMPORTANT
+.env

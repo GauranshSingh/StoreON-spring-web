@@ -1,10 +1,12 @@
 package com.gauransh.StoreON.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;      // to get auto wired function access
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
 //import com.gauransh.Signin_STOREON.entity.User;
 import com.gauransh.StoreON.repository.Signup_UserRepository;				// to get user repository function access
-import org.springframework.beans.factory.annotation.Autowired;      // to get auto wired function access
-import org.springframework.web.bind.annotation.*;
-import org.springframework.stereotype.Controller;
 
 @Controller			// to handle web request
 public class Signup_Controller{

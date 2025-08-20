@@ -13,6 +13,7 @@ import com.gauransh.StoreON.entity.Cart;
 import com.gauransh.StoreON.entity.ProductDetails;
 import com.gauransh.StoreON.repository.MyCartRepository;
 import com.gauransh.StoreON.repository.Product_details_ListRepository;
+
 import jakarta.servlet.http.HttpSession;
 
 @Controller
@@ -39,13 +40,14 @@ public class MyCartController {
 		
 		List<Cart> ProductsinCart = productdetailsrepository.findByUserId(UserId);
 		
+		
 	
 		List<Integer> productIds = ProductsinCart.stream().map(Cart::getProductId).toList(); 
 		
 		
+
 		if(productIds.isEmpty()) {
 			return "empty_cart";
-			
 		}
 
 		
@@ -63,6 +65,7 @@ public class MyCartController {
 
 	    double overall_price =0;
 	    int overall_quantity = 0;
+	    
 	    	    	    
 	    for(ProductDetails c : Cart_Product_Details) {
 	    	 int productId = c.getProductId();
@@ -70,6 +73,7 @@ public class MyCartController {
 	    	 overall_quantity=overall_quantity+quantity;
 	    	 overall_price = overall_price + c.getNewPrice()*quantity;
 	    }
+	    
 	    
 	    model.addAttribute("cartProducts", Cart_Product_Details);
 	      

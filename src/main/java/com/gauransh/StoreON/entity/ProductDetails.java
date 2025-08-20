@@ -39,6 +39,9 @@ public class ProductDetails {
     
     @Column(name = "quantity")
     private Integer quantity;
+    
+    @Column(name = "category")
+    private String category;
 
     public Integer getProductId() {
         return productId;
@@ -58,6 +61,14 @@ public class ProductDetails {
 
     public String getRating() {
         return rating;
+    }
+    
+    public void setcategory(String category) {
+        this.category = category;
+    }
+
+    public String getcategory() {
+        return category;
     }
 
     public void setRating(String rating) {

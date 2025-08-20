@@ -49,6 +49,8 @@ public class Order_HistoryController {
 
 		Integer UserId=(Integer) session.getAttribute("user_id");
 		
+		System.out.println("step:1" + UserId);
+
 		
 		List<Order_History> ProductsinCart = Listofproduct.findByuserid(UserId);
 		

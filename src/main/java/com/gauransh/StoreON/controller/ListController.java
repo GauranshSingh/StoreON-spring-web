@@ -20,7 +20,6 @@ public class ListController {
 	
 	@GetMapping("/List")
 	public String getdata(HttpSession session, Model model, @RequestParam String category){
-		System.out.println("step: 1");
 
 		String loggedInUser =(String) session.getAttribute("loggedInUser");
 		
@@ -28,17 +27,10 @@ public class ListController {
 			return "redirect:/login_page.html";
 		}
 		model.addAttribute("loggedInUser",loggedInUser);
-		
-		System.out.println("step: 2");
 
-		
 		List<list_2> products = productRepository.getByCategory(category);
 	    model.addAttribute("products", products);
-	    
-		System.out.println("step: 3");
-
-	    
-		
+	   		
 		return "List";
 			}
 }

@@ -2,9 +2,10 @@
 
 package com.gauransh.StoreON.repository;
  
-import com.gauransh.StoreON.entity.Login_User;
 import org.springframework.data.jpa.repository.JpaRepository;  // to get teh jpa repository 
 import org.springframework.stereotype.Repository;				//
+
+import com.gauransh.StoreON.entity.Login_User;
 
 @Repository
 public interface Login_UserRepository extends JpaRepository<Login_User, Integer> {		// function for SQL JPa is predifined 

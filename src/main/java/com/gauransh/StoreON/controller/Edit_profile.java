@@ -26,10 +26,16 @@ public class Edit_profile {
 		
 	    model.addAttribute("user", user);
 	    
-		String userIdStr = user.getUserId().toString();
+	    System.out.println("1");
+	    
+	    Integer userIdStr = (Integer) user.getUserId();
+		
+	    System.out.println("2");
 		
 		Update.Update_profile_funciton(userIdStr,first_name,last_name,email,ph_number,address,password);
 
+	    System.out.println("3");
+		
 		return "redirect:/Webpage";
 		
 	}

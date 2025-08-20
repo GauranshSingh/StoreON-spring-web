@@ -3,10 +3,12 @@ package com.gauransh.StoreON.controller;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
+
 import com.gauransh.StoreON.entity.Cart;
 import com.gauransh.StoreON.entity.ProductDetails;
 import com.gauransh.StoreON.repository.Empty_Cart;
@@ -14,6 +16,7 @@ import com.gauransh.StoreON.repository.MyCartRepository;
 import com.gauransh.StoreON.repository.Order_HistoryRepository;
 import com.gauransh.StoreON.repository.Product_details_ListRepository;
 import com.gauransh.StoreON.repository.Quantity_productRepository;
+
 import jakarta.servlet.http.HttpSession;
 import jakarta.transaction.Transactional;
 
@@ -40,11 +43,13 @@ public class Order_bookedController {
 	public String getproduct(Model model, HttpSession session) {
 		
 		String loggedInUser =(String) session.getAttribute("loggedInUser");
+		String user_lastname =(String) session.getAttribute("user_lastname");		
+		
 		if(loggedInUser==null) {
 			return "redirect:/login_page.html";
 		}
 		model.addAttribute("loggedInUser",loggedInUser);
-		
+		model.addAttribute("user_lastname",user_lastname);
 
 		Integer UserId=(Integer) session.getAttribute("user_id");
 		List<Cart> ProductsinCart = productdetailsrepository.findByUserId(UserId);
@@ -90,6 +95,10 @@ public class Order_bookedController {
 	   	    
 	    model.addAttribute("overall_quantity",overall_quantity);
 
+	    session.setAttribute("cartProducts", Cart_Product_Details);
+	    session.setAttribute("quantityMap", quantityMap);
+	    session.setAttribute("overall_price", overall_price);
+	    session.setAttribute("overall_quantity", overall_quantity);
 	    
 	    Product_deletion.EmptyCart(UserId);
 
